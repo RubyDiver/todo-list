@@ -1,6 +1,6 @@
 class TodoItemsController < ApplicationController
   before_action :set_todo_list
-  before_action :set_todo_item, only: [:destroy]
+  before_action :set_todo_item, only: [:destroy, :complete]
 
   def create
     @todo_item = @todo_list.todo_items.create(todo_item_params)
@@ -17,6 +17,10 @@ class TodoItemsController < ApplicationController
     redirect_to @todo_list
   end
 
+  def complete
+    @todo_item.update_attribute(:completed_at, Time.now)
+    redirect_to @todo_list, nootice: "Todo item completed"
+  end
 
   private
 
