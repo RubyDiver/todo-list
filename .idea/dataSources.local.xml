@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="dataSourceStorageLocal">
+    <data-source name="Rails todo_app: production" uuid="4117ce72-990c-441c-88ef-343f66d4e9f4">
+      <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" dbms="POSTGRES" exact-version="0" />
+      <user-name>todo_app</user-name>
+    </data-source>
+    <data-source name="Rails todo_app: development" uuid="0aaebc63-1d69-4cb6-801d-93c01c823606">
+      <database-info product="PostgreSQL" version="11.6" jdbc-version="4.2" driver-name="PostgreSQL JDBC Driver" driver-version="42.2.5" dbms="POSTGRES" exact-version="11.6" exact-driver-version="42.2">
+        <identifier-quote-string>&quot;</identifier-quote-string>
+      </database-info>
+      <case-sensitivity plain-identifiers="lower" quoted-identifiers="exact" />
+      <introspection-schemas>@:@</introspection-schemas>
+    </data-source>
+    <data-source name="Rails todo_app: test" uuid="429c431d-bad3-4b18-ab33-6a6dc88a6137">
+      <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" dbms="POSTGRES" exact-version="0" />
+    </data-source>
+  </component>
+</project>

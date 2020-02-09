@@ -1,0 +1,12 @@
+%p#notice= notice
+
+
+%p
+  %b Title:
+  = @todo_list.title
+%p
+  %b Description:
+  = @todo_list.description
+  
+  %p= render @todo_list.todo_items
+  %p= render "todo_items/form"
