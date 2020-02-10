@@ -1,12 +1,19 @@
-%p
-  %b Title:
+%p#notice
+  = notice
+
+%h2.todo_list_title
   = @todo_list.title
-%p
-  %b Description:
+%p.todo_list_sub_title
   = @todo_list.description
   
-  %p= render @todo_list.todo_items
-  %p= render "todo_items/form"
-
-
-= link_to "Back", root_path
+#todo_items_wrapper
+  =render @todo_list.todo_items
+  #form
+    =render "todo_items/form"
+    
+.links
+  = link_to "Edit", edit_todo_list_path
+  |
+  = link_to "Back", root_path
+  |
+  = link_to "Delete", todo_list_path, method: :delete, data: {confirm: "Are you sure?"}

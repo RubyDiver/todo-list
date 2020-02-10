@@ -1,17 +1,21 @@
 .row.clearfix
-  .container
-    -if todo_item.completed?
-      .todo_item
+  -if todo_item.completed?
+    .complete
+      = link_to complete_todo_list_todo_item_path(@todo_list, todo_item.id), method: :patch do
+        %i{:style => "opacity:0,4", class: "fa fa-check"}
+    .todo_item
       %p{:style => "opacity:0,4"}
-      %strike= todo_item.body
-      .trash
-      = link_to "Delete", todo_list_todo_item_path(@todo_list, todo_item.id), method: :delete, data: { confirm: "Are you sure?"}
-      .complete
-      = link_to "Mark as Complete", complete_todo_list_todo_item_path(@todo_list, todo_item.id), method: :patch
-    -else
-      .todo_item
-      = todo_item.body
-      .trash
-      = link_to "Delete", todo_list_todo_item_path(@todo_list, todo_item.id), method: :delete, data: { confirm: "Are you sure?"}
-      .complete
-      = link_to "Mark as Complete", complete_todo_list_todo_item_path(@todo_list, todo_item.id), method: :patch
+        %strike= todo_item.body
+    .trash
+      = link_to todo_list_todo_item_path(@todo_list, todo_item.id), method: :delete, data: { confirm: "Are you sure?" } do
+        %i.fa.fa-trash
+  -else
+    .complete
+      = link_to complete_todo_list_todo_item_path(@todo_list, todo_item.id), method: :patch do
+        %i{class: "fa fa-check"}
+    .todo_item
+      %p= todo_item.body
+    .trash
+      = link_to todo_list_todo_item_path(@todo_list, todo_item.id), method: :delete, data: { confirm: "Are you sure?" } do
+        %i.fa.fa-trash
+

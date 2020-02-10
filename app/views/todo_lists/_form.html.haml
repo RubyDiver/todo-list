@@ -6,12 +6,11 @@
         - @todo_list.errors.full_messages.each do |message|
           %li= message
 
-  .form-group
+  .field
     = f.label :title
     = f.text_field :title
-  .form-group
+  .field
     = f.label :description
     = f.text_area :description
   .actions
-    = f.submit 'Save'
-    
+    = f.submit 'Create Todo list'

@@ -35,6 +35,7 @@ gem 'devise', '~> 4.7', '>= 4.7.1'
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 gem 'simple_form', '~> 5.0', '>= 5.0.2'
+gem 'apartment', '~> 2.2', '>= 2.2.1'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
@@ -42,6 +43,7 @@ gem 'simple_form', '~> 5.0', '>= 5.0.2'
 gem 'bootsnap', '>= 1.1.0', require: false
 
 group :development, :test do
+  gem 'rspec-rails', '~> 3.9'
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
 end
@@ -53,6 +55,9 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+  gem 'guard', '~> 2.16', '>= 2.16.1'
+  gem 'guard-rspec', '~> 4.7', '>= 4.7.3'
+  gem 'guard-cucumber', '~> 2.1', '>= 2.1.2'
 end
 
 group :test do
