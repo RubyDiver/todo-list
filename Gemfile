@@ -35,7 +35,6 @@ gem 'devise', '~> 4.7', '>= 4.7.1'
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 gem 'simple_form', '~> 5.0', '>= 5.0.2'
-gem 'apartment', '~> 2.2', '>= 2.2.1'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
