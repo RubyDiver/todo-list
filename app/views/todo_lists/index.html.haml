@@ -1,8 +1,8 @@
-- if @todo_lists.empty?
+- if @todo_list.empty?
   %h1.todo_list_title
     No Todo lists Created
 -else
-  - @todo_lists.each do |todolist|
+  - @todo_list.each do |todolist|
     .index_row.clearfix
       %h2.todo_list_title
         = link_to todolist.title, todo_list_path(todolist)

@@ -5,7 +5,7 @@ class TodoListsController < ApplicationController
   # GET /todo_lists
   # GET /todo_lists.json
   def index
-    @todo_lists = TodoList.where(:user_id => current_user)
+    @todo_list = TodoList.where(:user_id => current_user)
   end
 
   # GET /todo_lists/1
