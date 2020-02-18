@@ -1,11 +1,10 @@
-- @todo_lists.each do |todo_list|
-  .index_row.clearfix
-    %h2.todo_list_title
-      = link_to todo_list.title, todo_list
-    %p.todo_list_sub_title
-      = todo_list.description
-      
-.links
-  = link_to "New Todo List", new_todo_list_path
-  
-  
+- if @todo_lists.empty?
+  %h1.todo_list_title
+    No Todo lists Created
+-else
+  - @todo_lists.each do |todolist|
+    .index_row.clearfix
+      %h2.todo_list_title
+        = link_to todolist.title, todo_list_path(todolist)
+      %p.todo_list_sub_title
+        = truncate(todolist.description, length: 500)

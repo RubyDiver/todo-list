@@ -1,0 +1,7 @@
+#footer.footer.navbar-fixed-bottom
+  .copyright
+    %p
+      \&copy; #{Time.now.year}
+      %a{href: root_path, title: ENV["APP_NAME"]} All Rights Reserved
+    
+    = render partial: 'analytics' if Rails.env == 'production'

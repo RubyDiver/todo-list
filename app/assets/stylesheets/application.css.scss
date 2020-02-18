@@ -49,22 +49,10 @@ body {
   clear: both;
 }
 
-#notice {
-  text-align: center;
-  font-size: 0.6em;
-  color: $dark;
-  font-weight: 100;
-  border: 1px solid white;
-  padding: .5em 1em;
-  border-radius: 5px;
-  display: block;
-  margin: 1em 25%;
-
-}
 
 .container {
   width: 50%;
-  max-width: 750px;
+  max-width: 800px;
   background: $white_opaque;
   margin: 3em auto 0 auto;
   border-radius: 7px;
@@ -175,6 +163,30 @@ body {
   }
 }
 
+// Navbar styling
+.navbar {
+  padding-bottom: 20px;
+}
+
+.navbar-default .navbar-brand {
+  padding-top: 25px;
+  font-size: 150%;
+  font-weight: bold;
+  color: #1F7972;
+}
+
+
+.navbar-nav {
+  padding-top: 10px;
+  padding-right: 20px;
+}
+
+.navbar-default .navbar-nav li > a {
+  font-weight: bold;
+  font-size: 130%;
+  color: #ffffff;
+}
+
 .links {
   display: block;
   margin: 1.5em auto 0 auto;
@@ -219,7 +231,7 @@ input[type="submit"] {
   color: $dark;
   &:hover {
     background: $dark;
-    color: white;
+    color: #ffffff;
   }
 }
 ::-webkit-input-placeholder { color: $dark; }

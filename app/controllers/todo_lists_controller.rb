@@ -1,11 +1,11 @@
 class TodoListsController < ApplicationController
   before_action :set_todo_list, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_user!
+  before_action :authenticate_user!, except: [:index, :show]
 
   # GET /todo_lists
   # GET /todo_lists.json
   def index
-    @todo_lists = TodoList.where(:user_id => current_user.id)
+    @todo_lists = TodoList.where(:user_id => current_user)
   end
 
   # GET /todo_lists/1
@@ -43,8 +43,10 @@ class TodoListsController < ApplicationController
   # PATCH/PUT /todo_lists/1.json
   def update
     if @todo_list.update(todo_list_params)
-      redirect_to @todo_list, notice: 'Todo list was successfully updated.'
+      flash[:success] = "Todo list has been updated"
+      redirect_to @todo_list
     else
+      flash.now[:danger] = "Todo list has not been updated"
       render :edit
     end
   end
@@ -57,6 +59,10 @@ class TodoListsController < ApplicationController
     redirect_to root_url, notice: 'Todo list has been deleted.'
   end
 
+  def complete
+    @todo_item.update_attribute(:completed_at, Time.now)
+    redirect_to @todo_list, notice: "Todo item completed"
+  end
 
   private
 
@@ -70,3 +76,4 @@ class TodoListsController < ApplicationController
     params.require(:todo_list).permit(:title, :description)
   end
 end
+

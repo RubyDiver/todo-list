@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-git_source(:github) { |repo| "https://github.com/#{repo}.git" }
+git_source(:github) {|repo| "https://github.com/#{repo}.git"}
 
 ruby '2.6.1'
 
@@ -37,7 +37,6 @@ gem 'devise', '~> 4.7', '>= 4.7.1'
 gem 'simple_form', '~> 5.0', '>= 5.0.2'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
-
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
 
